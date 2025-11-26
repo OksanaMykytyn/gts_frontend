@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "hasTitle": true,
+    "titleImage": "https://i.pinimg.com/736x/ef/3e/fc/ef3efc656dde30d643d69a940b7a6ddf.jpg",
+    "title": "Name: Well, if you're here for a relatable mean girl who can't deal healthily with her emotions",
+    "tags": "#manga #history #romance",
+    "post": {
+      "user": "UserName",
+      "userImg": "https://i.pinimg.com/1200x/36/66/70/3666706d4737850f40c16d9ef977df6b.jpg",
+      "title": "Well, if you're here for a relatable mean girl who can't deal healthily with her emotions",
+      "content": "Well, if you're here for a relatable mean girl who can't deal healthily with her emotions, hopelessly and desperately yearns for attention...",
+      "likes": 34,
+      "comments": 12
+    }
+  },
+  {
+    "id": 2,
+    "hasTitle": false,
+    "post": {
+      "user": "Mia",
+      "userImg": "https://i.pinimg.com/1200x/3d/4d/f8/3d4df803c4cd9809b217e94b026c507a.jpg",
+      "title": "Why villains are always more interesting",
+      "content": "Good characters don't struggle enough. But villains? They bleed desire, flaws, motives...",
+      "likes": 122,
+      "comments": 20
+    }
+  },
+  {
+    "id": 3,
+    "hasTitle": true,
+    "titleImage": "https://i.pinimg.com/736x/7f/9c/91/7f9c91ea551e07c0eb014873a2005646.jpg",
+    "title": "Spy x Family — cutest chaos ever",
+    "tags": "#anime #comedy",
+    "post": {
+      "user": "Lio",
+      "userImg": "https://i.pinimg.com/736x/9f/08/83/9f0883ff5fdcf35b91643d952074e9d1.jpg",
+      "title": "Anya supremacy",
+      "content": "Twilight is the best spy, Yor is the best assassin, and Anya is the best chaos gremlin...",
+      "likes": 51,
+      "comments": 8
+    }
+  }
+]

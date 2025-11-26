@@ -1,0 +1,15 @@
+button {
+  font-family: "Goldman", sans-serif;
+  font-size: 20px;
+  padding: 8px 40px;
+  background-color: var(--green-color);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 0 16px 0 #00ffa3;
+  width: max-content;
+}
+
+button.mini {
+  padding: 4px 34px;
+  font-size: 14px;
+}

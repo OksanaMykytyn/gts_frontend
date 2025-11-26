@@ -1,0 +1,99 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  font-family: "Goldman", sans-serif;
+}
+
+.header .container {
+  padding: 15px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .header-logo img:first-child {
+  display: none;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+
+.header nav ul li a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+  .header .header-logo img:first-child {
+    display: block;
+  }
+
+  .header nav {
+    display: none;
+  }
+}
+
+.aside {
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 320px;
+  background-color: rgba(0, 0, 0, 0.411);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  transform: translateX(-100%);
+  z-index: 100;
+}
+
+.aside.open {
+  transform: translateX(0);
+}
+
+.menu-btn,
+.close-btn {
+  cursor: pointer;
+}
+
+.aside .aside-logo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aside nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+
+.aside nav ul li a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}

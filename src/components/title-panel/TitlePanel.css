@@ -1,0 +1,39 @@
+.title-panel {
+  background-color: rgba(0, 0, 0, 0.281);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: solid 2px rgba(0, 255, 163, 0.1);
+  width: calc(100% - 36px);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 18px;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+
+.title-panel img {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.title-panel .title-panel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title-panel .title-panel-text h2 {
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+}
+
+.title-panel .title-panel-text p {
+  font-size: 14px;
+  color: var(--green-color);
+  font-weight: 700;
+}

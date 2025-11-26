@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Goldman:wght@400;700&display=swap");
+
+:root {
+  --background-color: #0a0a0a;
+  --background-color-for-circle: #00ffa3;
+  --green-color: #00ffa3;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Geologica", sans-serif;
+  font-weight: normal;
+  color: black;
+  padding-top: 70px;
+}
+
+.circle-bg {
+  position: fixed;
+  opacity: 0.2;
+  background-color: var(--background-color-for-circle);
+  border-radius: 50%;
+  -webkit-filter: blur(60px);
+  filter: blur(60px);
+}
+
+.circle-1 {
+  width: 308px;
+  height: 308px;
+  top: 30vh;
+  left: 15vw;
+}
+
+.circle-2 {
+  width: 526px;
+  height: 526px;
+  top: 80vh;
+  left: 60vw;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.link-icon {
+  margin: 4px auto;
+  display: block;
+}
+
+.heading-type-1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin: 55px;
+  text-align: center;
+}
+
+form {
+  width: calc(100% - 32px);
+  margin: 34px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  z-index: 55;
+}
+
+.error-text {
+  margin-top: 4px;
+  font-size: 12px;
+  color: red;
+  width: 100%;
+  margin-left: 4px;
+}
+
+.text-below-form {
+  font-size: 14px;
+  font-family: "Goldman", sans-serif;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  color: white;
+}
+
+.text-below-form a {
+  text-decoration: none;
+  color: var(--green-color);
+}

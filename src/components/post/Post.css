@@ -1,0 +1,91 @@
+.post {
+  max-width: 600px;
+  width: 100%;
+  width: calc(100% - 36px);
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.281);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: solid 2px rgba(0, 255, 163, 0.1);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.post .post-user {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post .post-user .post-user-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.post .post-user .post-user-block img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.post .post-user .post-user-block p {
+  color: white;
+  font-size: 16px;
+}
+
+.post .post-tag {
+  color: var(--green-color);
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.post .post-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.post .post-content {
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  font-weight: 100;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post .post-statistic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.post .post-statistic .post-like,
+.post .post-statistic .post-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.post .post-statistic .post-like p,
+.post .post-statistic .post-comment p {
+  font-family: "Goldman", sans-serif;
+  font-size: 16px;
+  color: var(--green-color);
+}
