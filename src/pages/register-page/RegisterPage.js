@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { API_URL } from "../../config";
+
 import Button from "../../components/button/Button";
 import {
   TextInput,
@@ -56,7 +58,7 @@ const RegisterPage = () => {
     if (!validate()) return;
 
     try {
-      const res = await fetch("http://localhost:3000/users/register", {
+      const res = await fetch(`${API_URL}/users/register`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -76,7 +78,7 @@ const RegisterPage = () => {
         return;
       }
 
-      await fetch("http://localhost:3000/users/login", {
+      await fetch(`${API_URL}/users/login`, {
         method: "POST",
         credentials: "include",
         headers: {

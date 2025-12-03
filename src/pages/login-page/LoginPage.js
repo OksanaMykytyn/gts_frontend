@@ -9,6 +9,8 @@ import {
 import Background from "../../components/background/Background";
 import Header from "../../components/header/Header";
 
+import { API_URL } from "../../config";
+
 const LoginPage = () => {
   const [form, setForm] = useState({
     email: "",
@@ -47,7 +49,7 @@ const LoginPage = () => {
     if (!validate()) return;
 
     try {
-      const res = await fetch("http://localhost:3000/users/login", {
+      const res = await fetch(`${API_URL}/users/login`, {
         method: "POST",
         credentials: "include",
         headers: {

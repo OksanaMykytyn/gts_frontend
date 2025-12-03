@@ -8,6 +8,8 @@ import "./ProfilePage.css";
 
 import defaultImage from "../../images/img/image.png";
 
+import { API_URL } from "../../config";
+
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +19,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await fetch("http://localhost:3000/users/profile", {
+        const res = await fetch(`${API_URL}/users/profile`, {
           method: "GET",
           credentials: "include",
         });

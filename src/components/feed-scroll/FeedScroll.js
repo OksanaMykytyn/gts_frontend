@@ -3,7 +3,7 @@ import RecommendationPost from "../recommendation-post/RecommendationPost";
 
 import "./FeedScroll.css";
 
-const API_URL = "http://localhost:3000/posts";
+import { API_URL } from "../../config";
 
 const FeedScroll = () => {
   const [recommendations, setRecommendations] = useState([]);
@@ -15,7 +15,7 @@ const FeedScroll = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/posts`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
