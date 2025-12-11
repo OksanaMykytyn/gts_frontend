@@ -1,0 +1,83 @@
+.container.space-x {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 140px 20px;
+}
+
+.container.space-x .content-card {
+  width: 100%;
+  max-width: 800px;
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  color: white;
+}
+
+.container.space-x .main-title {
+  font-size: 2.2em;
+  font-weight: 800;
+  margin: 100;
+  color: #00bfff; /* Світло-блакитний колір для теми космосу */
+}
+
+.container.space-x .subtitle {
+  font-size: 1em;
+  color: #b0b0b0;
+  margin-top: 5px;
+}
+
+/* --------------- Список Запусків --------------- */
+
+.container.space-x .launches-list {
+  display: grid;
+  gap: 20px;
+}
+
+.container.space-x .launch-item {
+  background-color: #3a3a3a;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #00bfff; /* Вертикальна блакитна лінія як акцент */
+  transition: background-color 0.3s;
+}
+
+.container.space-x .launch-item:hover {
+  background-color: #444;
+}
+
+.container.space-x .launch-mission {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.container.space-x .launch-details p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #c0c0c0;
+}
+
+.container.space-x .launch-details .label {
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-right: 5px;
+}
+
+/* --------------- Стан завантаження/помилки --------------- */
+.container.space-x .loading-state,
+.container.space-x .error-state {
+  text-align: center;
+  width: 100%;
+  padding-top: 100px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.container.space-x .error-state p {
+  color: #ff4747; /* Червоний колір для помилок */
+}

@@ -11,6 +11,10 @@ import Header from "../../components/header/Header";
 
 import { API_URL } from "../../config";
 
+const setAuthToken = (token) => {
+  localStorage.setItem("authToken", token);
+};
+
 const LoginPage = () => {
   const [form, setForm] = useState({
     email: "",
@@ -51,7 +55,6 @@ const LoginPage = () => {
     try {
       const res = await fetch(`${API_URL}/users/login`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -66,6 +69,10 @@ const LoginPage = () => {
       if (!res.ok) {
         setServerError(data.message || "Login failed");
         return;
+      }
+
+      if (data.token) {
+        setAuthToken(data.token);
       }
 
       navigate("/profile");

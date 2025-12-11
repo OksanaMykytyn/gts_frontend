@@ -1,0 +1,63 @@
+.analytic {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-top: 120px;
+  padding-bottom: 100px;
+  gap: 32px;
+
+  color: #ffffff;
+  text-align: center;
+  overflow: auto;
+  height: 90vh;
+}
+
+.analytic h2 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  color: #00ffb2;
+  text-shadow: 0 0 12px rgba(0, 255, 178, 0.7);
+}
+
+.analytic h3 {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.analytic > canvas,
+.analytic > div {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 18px;
+  padding: 24px;
+  width: 80%;
+  max-width: 900px;
+
+  box-shadow: 0 0 25px rgba(0, 255, 178, 0.25),
+    inset 0 0 20px rgba(0, 255, 178, 0.1);
+
+  border: 1px solid rgba(0, 255, 178, 0.3);
+}
+
+/* ✅ CHART CONTAINER FIX */
+.analytic canvas {
+  max-height: 400px !important;
+}
+
+@media (max-width: 768px) {
+  .analytic h2 {
+    font-size: 26px;
+  }
+
+  .analytic > div {
+    width: 95%;
+    padding: 16px;
+  }
+}

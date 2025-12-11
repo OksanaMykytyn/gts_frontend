@@ -1,10 +1,12 @@
 import React from "react";
-
+import { useEffect } from "react";
 import TitlePanel from "../title-panel/TitlePanel";
 import Post from "../post/Post";
 
 import link from "../../images/icons/link.svg";
 import Button from "../button/Button";
+
+import { API_URL } from "../../config";
 
 import "./RecommendationPost.css";
 

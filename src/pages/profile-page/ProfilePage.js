@@ -7,8 +7,20 @@ import Header from "../../components/header/Header";
 import "./ProfilePage.css";
 
 import defaultImage from "../../images/img/image.png";
+import Button from "../../components/button/Button";
 
 import { API_URL } from "../../config";
+
+const getAuthToken = () => {
+  return localStorage.getItem("authToken");
+};
+
+const createAuthHeader = (token) => {
+  return {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+};
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
@@ -16,12 +28,39 @@ const ProfilePage = () => {
 
   const navigate = useNavigate();
 
+  const upgrade = async () => {
+    const token = getAuthToken();
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    const res = await fetch(`${API_URL}/api/stripe/create-session`, {
+      method: "POST",
+      headers: createAuthHeader(token),
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      console.error("Payment session creation failed:", data.message);
+    }
+    window.location.href = data.url;
+  };
+
   useEffect(() => {
     const fetchProfile = async () => {
+      const token = getAuthToken();
+
+      if (!token) {
+        navigate("/login");
+        setIsLoading(false);
+        return;
+      }
+
       try {
         const res = await fetch(`${API_URL}/users/profile`, {
           method: "GET",
-          credentials: "include",
+          headers: createAuthHeader(token),
         });
 
         if (res.status === 401) {
@@ -78,6 +117,7 @@ const ProfilePage = () => {
         <img src={profile.photo || defaultImage} alt={profile.name} />
         <h1>{profile.name}</h1>
         <p>{profile.email}</p>
+        <Button onClick={upgrade} text="Upgrade to Premium" />
       </section>
     </>
   );

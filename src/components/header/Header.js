@@ -71,10 +71,10 @@ const Header = () => {
                 <Link to="/">Forum</Link>
               </li>
               <li>
-                <Link to="/">Statistic</Link>
+                <Link to="/admin/analytics">Statistic</Link>
               </li>
               <li>
-                <Link to="/">News</Link>
+                <Link to="/chatbot">Chatbot</Link>
               </li>
             </ul>
           </nav>
@@ -98,10 +98,10 @@ const Header = () => {
               <Link to="/">Forum</Link>
             </li>
             <li onClick={closeAside}>
-              <Link to="/">Statistic</Link>
+              <Link to="/admin/analytics">Statistic</Link>
             </li>
             <li onClick={closeAside}>
-              <Link to="/">News</Link>
+              <Link to="/chatbot">Chatbot</Link>
             </li>
           </ul>
         </nav>

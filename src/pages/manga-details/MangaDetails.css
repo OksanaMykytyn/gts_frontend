@@ -1,0 +1,149 @@
+.content-card {
+  /* Обмеження ширини і стилізація картки */
+  width: 100%;
+  max-width: 1000px;
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  color: white; /* Білий текст */
+}
+
+.container.manga {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Вирівнювання на початок (зверху) */
+  padding: 140px 20px;
+}
+
+.main-title {
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-top: 100px;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #b0b0b0;
+  margin-top: 5px;
+}
+
+/* --------------- Основний макет (Сайдбар + Контент) --------------- */
+
+.details-layout {
+  display: flex;
+  flex-direction: column; /* За замовчуванням: стовпчик (для мобільних) */
+  gap: 30px;
+}
+
+/* --------------- Сайдбар (Обкладинка та Метадані) --------------- */
+
+.aside-info {
+  width: 100%;
+}
+
+.cover-image {
+  width: 100%;
+  max-height: 400px; /* Обмеження висоти зображення */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.metadata-box {
+  background-color: #3a3a3a;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.metadata-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ff6347; /* Червоний колір для акценту */
+  margin-bottom: 10px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.metadata-item {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.metadata-item .label {
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.metadata-item .score {
+  color: #ffd700; /* Золотий для оцінки */
+  font-weight: 700;
+}
+
+/* --------------- Основний Зміст --------------- */
+
+.main-content {
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.synopsis-text {
+  color: #c0c0c0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* --------------- Теги --------------- */
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-badge {
+  background-color: #ff6347;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tag-badge:hover {
+  background-color: #e0523e;
+}
+
+/* --------------- Медіа-запит для десктопів (адаптивність) --------------- */
+
+@media (min-width: 768px) {
+  .details-layout {
+    /* Перемикання на горизонтальний макет для десктопів */
+    flex-direction: row;
+  }
+
+  .aside-info {
+    /* Обмеження ширини сайдбару */
+    width: 300px;
+  }
+
+  .main-content {
+    /* Залишок простору для контенту */
+    flex-grow: 1;
+  }
+}

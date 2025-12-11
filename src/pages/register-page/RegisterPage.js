@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { API_URL } from "../../config";
 
@@ -11,6 +12,10 @@ import {
 import Background from "../../components/background/Background";
 import Header from "../../components/header/Header";
 
+const setAuthToken = (token) => {
+  localStorage.setItem("authToken", token);
+};
+
 const RegisterPage = () => {
   const [form, setForm] = useState({
     username: "",
@@ -22,6 +27,7 @@ const RegisterPage = () => {
 
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -58,9 +64,8 @@ const RegisterPage = () => {
     if (!validate()) return;
 
     try {
-      const res = await fetch(`${API_URL}/users/register`, {
+      const registerRes = await fetch(`${API_URL}/users/register`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -71,16 +76,15 @@ const RegisterPage = () => {
         }),
       });
 
-      const data = await res.json();
+      const registerData = await registerRes.json();
 
-      if (!res.ok) {
-        setServerError(data.message || "Registration failed");
+      if (!registerRes.ok) {
+        setServerError(registerData.message || "Registration failed");
         return;
       }
 
-      await fetch(`${API_URL}/users/login`, {
+      const loginRes = await fetch(`${API_URL}/users/login`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -90,7 +94,20 @@ const RegisterPage = () => {
         }),
       });
 
-      window.location.href = "/profile";
+      const loginData = await loginRes.json();
+
+      if (!loginRes.ok) {
+        setServerError(
+          "Registration successful, but login failed. Try signing in."
+        );
+        return;
+      }
+
+      if (loginData.token) {
+        setAuthToken(loginData.token);
+      }
+
+      navigate("/profile");
     } catch (err) {
       setServerError("Server error");
     }
